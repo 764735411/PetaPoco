@@ -43,5 +43,12 @@ namespace PetaPocoWebApi.Controllers
             string deviceRegisterJson = JsonConvert.SerializeObject(deviceRegister);
             return deviceRegisterJson;
         }
+
+        // DELETE: api/DeviceRegister/5
+        [HttpDelete("{id}")]
+        public string Delete(int id)
+        {
+            return "123123";
+        }
     }
 }
