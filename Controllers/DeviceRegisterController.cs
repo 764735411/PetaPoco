@@ -36,6 +36,7 @@ namespace PetaPocoWebApi.Controllers
                .UsingConnectionString(connectionString)
                .UsingProvider<SqlServerDatabaseProvider>().Create();
 
+
             //sql
             Sql sql = Sql.Builder.Select("*").From("YYSG_SBS");
             List<DeviceRegister> deviceRegister = db.Fetch<DeviceRegister>(sql);
