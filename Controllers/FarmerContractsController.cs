@@ -15,6 +15,8 @@ namespace PetaPocoWebApi.Controllers
     [ApiController]
     public class FarmerContractsController : ControllerBase
     {
+
+        private FarmerContractsController farmer;
         // GET: api/FarmerContracts
         //[HttpGet]
         /*public IEnumerable<string> Get()
@@ -53,7 +55,6 @@ namespace PetaPocoWebApi.Controllers
         public string Get()
         {
             string connectionString = "Server=127.0.0.1;Database=YC2020343403A;Uid=sa;Pwd=123456";
-
             //连接数据库
             var db = DatabaseConfiguration.Build()
                .UsingCommandTimeout(60)
@@ -66,6 +67,7 @@ namespace PetaPocoWebApi.Controllers
             List<FarmerContract> deviceRegister = db.Fetch<FarmerContract>(sql);
             //DeviceRegister deviceRegister = db.SingleOrDefault<DeviceRegister>(sql);
             string deviceRegisterJson = JsonConvert.SerializeObject(deviceRegister);
+            
             return deviceRegisterJson;
         }
     }

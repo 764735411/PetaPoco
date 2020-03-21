@@ -17,10 +17,6 @@ namespace PetaPocoWebApi.Controllers
     {
         // GET: api/DeviceRegister
         //[HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
 
         [HttpGet]
@@ -44,11 +40,5 @@ namespace PetaPocoWebApi.Controllers
             return deviceRegisterJson;
         }
 
-        // DELETE: api/DeviceRegister/5
-        [HttpDelete("{id}")]
-        public string Delete(int id)
-        {
-            return "123123";
-        }
     }
 }

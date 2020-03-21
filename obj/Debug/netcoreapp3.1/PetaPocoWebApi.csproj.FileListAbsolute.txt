@@ -1,4 +1,3 @@
-H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\web.config
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\appsettings.json
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
