@@ -4,6 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using PetaPoco;
+using PetaPoco.Providers;
+using PetaPocoWebApi.Service;
+using PetspPetaPocoWebApi.Model;
 
 namespace PetaPocoWebApi.Controllers
 {
@@ -11,36 +16,89 @@ namespace PetaPocoWebApi.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        // GET: api/Students
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private IRepository _repository = null;
+        public StudentsController()
         {
-            return new string[] { "value1", "value2" };
+            _repository = new Repository();
+        }
+
+        // GET: api/Students
+        //查询
+        [HttpGet]
+        public string GetAll()
+        {
+           
+            List<Student> studentList = _repository.QueryAll<Student>();
+            foreach (var student in studentList)
+            {
+                student.Sex = student.Sex.Trim();
+            }
+            string StudentJson = JsonConvert.SerializeObject(studentList);
+            return StudentJson;
         }
 
         // GET: api/Students/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public string GetById(int id)
         {
-            return "value";
+            Student student = _repository.QueryById<Student>(id);
+            if (student.Sex != null)
+            {
+                student.Sex = student.Sex.Trim();
+            }
+            string StudentJson = JsonConvert.SerializeObject(student);
+            return StudentJson;
         }
 
+        //添加
         // POST: api/Students
         [HttpPost]
-        public void Post([FromBody] string value)
+        public string Post([FromBody] Student student)
         {
+            string message = "传入数据为空或数据错误";
+            if (student!=null)
+            {
+                message = "添加成功";
+                _repository.Add(student);
+                return message;
+            }
+            else
+            {
+                return message;
+            }
         }
 
+        //修改
         // PUT: api/Students/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public string Put(int id, [FromBody] Student student)
         {
+            string message = "修改失败";
+            if (_repository.QueryById<Student>(id) != null)
+            {
+                _repository.Update<Student>(student);
+                message = "修改成功";
+            }
+
+            return message;
         }
 
+        //删除
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            string message;
+            int a = _repository.DeleteById<Student>(id);
+            if (a == 1)
+            {
+                message = "删除成功";
+            }
+            else
+            {
+                message = "删除失败";
+            }
+           return message;
         }
     }
 }
