@@ -18,7 +18,7 @@ namespace PetaPocoWebApi.Controllers
         private StudentController studentController;
         // GET: api/Student
         //查询
-        [HttpGet]
+        //[HttpGet]
         public string Get()
         {
             List<Student> studentList = new List<Student>();
@@ -33,15 +33,14 @@ namespace PetaPocoWebApi.Controllers
             student.Age = 32;
 
             studentList.Add(student);
-
-            //增加
             string studentStr = JsonConvert.SerializeObject(studentList);
-            studentController.Post(studentStr);
+            //增加
+            //studentController.Post(studentStr);
             //删除
-            studentController.Delete(95);
-
+            //studentController.Delete(87);
+            //修改
+            //studentController.Put(64, studentStr);
             return StudentJson;
-
         }
         //插入
         [HttpPost]
@@ -84,10 +83,11 @@ namespace PetaPocoWebApi.Controllers
                 List<Student> stuList = JsonConvert.DeserializeObject<List<Student>>(value);
                 foreach (var student in stuList)
                 {
-                if (db.SingleOrDefault<Student>(id) != null)
-                {
-                    db.Update(student);
-                }
+                    if (db.SingleOrDefault<Student>(id) != null)
+                    {
+                        db.Update(student,id);
+                    
+                    }
                     
                 }
           
@@ -113,6 +113,7 @@ namespace PetaPocoWebApi.Controllers
 
         }
 
+        [HttpGet]
         //查询
         public string GetStudent()
         {
