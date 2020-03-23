@@ -38,7 +38,7 @@ namespace PetaPocoWebApi.Controllers
         }
 
         // GET: api/Students/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("item/{id}", Name = "Get")]
         public string GetById(int id)
         {
             Student student = _repository.QueryById<Student>(id);
@@ -52,7 +52,7 @@ namespace PetaPocoWebApi.Controllers
 
         //添加
         // POST: api/Students
-        [HttpPost]
+        [HttpPost("add")]
         public string Post([FromBody] Student student)
         {
             string message = "传入数据为空或数据错误";
@@ -70,7 +70,7 @@ namespace PetaPocoWebApi.Controllers
 
         //修改
         // PUT: api/Students/5
-        [HttpPut("{id}")]
+        [HttpPut("update/{id}")]
         public string Put(int id, [FromBody] Student student)
         {
             string message = "修改失败";
@@ -85,7 +85,7 @@ namespace PetaPocoWebApi.Controllers
 
         //删除
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
+        [HttpDelete("delete/{id}")]
         public string Delete(int id)
         {
             string message;
