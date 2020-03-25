@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using PetaPoco;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace PetspPetaPocoWebApi.Model
 {
@@ -25,5 +27,6 @@ namespace PetspPetaPocoWebApi.Model
         [Column("sex")]
         [StringLength(2)]
         public string Sex { get; set; }
+
     }
 }

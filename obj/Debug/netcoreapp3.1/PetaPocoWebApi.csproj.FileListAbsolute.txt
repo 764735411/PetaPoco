@@ -148,4 +148,5 @@ H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.MvcApplicationPartsAssemblyInfo.cache
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Elasticsearch.Net.dll
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Nest.dll
+H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\web.config
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.csprojAssemblyReference.cache
