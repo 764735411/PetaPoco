@@ -1,7 +1,6 @@
 ﻿using Nest;
 using PetaPoco;
 using PetaPoco.Providers;
-using PetspPetaPocoWebApi.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +12,7 @@ namespace PetaPocoWebApi.Service
     public class Repository : IRepository
     {
         //连接数据库
-        private static string connectionString = "Server=127.0.0.1;Database=School;Uid=sa;Pwd=123456";
+        private static string connectionString = "Server=127.0.0.1;Database=UserManege;Uid=sa;Pwd=123456";
         IDatabase db = DatabaseConfiguration.Build()
             .UsingCommandTimeout(60)
             .WithAutoSelect()
@@ -28,9 +27,10 @@ namespace PetaPocoWebApi.Service
 
         public int DeleteById<T>(int id)
         {
-            int a = 0;
-            a = db.Delete<T>(id);
-            return a;
+            
+            int result = db.Delete<T>(id);
+         
+            return result;
         }
          
         public List<T> QueryAll<T>()
@@ -47,8 +47,8 @@ namespace PetaPocoWebApi.Service
 
         public int Update<T>(T t)
         {
-           int a = db.Update(t);
-            return a;
+           int updateResult = db.Update(t);
+            return updateResult;
         }
     }
 }
