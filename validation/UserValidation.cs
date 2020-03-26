@@ -9,10 +9,12 @@ namespace PetaPocoWebApi.validation
 {
     public class UserValidation:AbstractValidator<User>
     {
+
         public UserValidation()
         {
             //验证姓名
             RuleFor(p => p.UserName).NotNull().MaximumLength(50).WithMessage("名字长度不能超过50");
+            RuleFor(p => p.UserPhone).NotNull().Length(11).WithMessage("电话号码必须为11位");
         }
     }
 }

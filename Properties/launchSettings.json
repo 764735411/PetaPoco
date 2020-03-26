@@ -20,7 +20,7 @@
     "PetaPocoWebApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/Students",
+      "launchUrl": "api/User",
       "applicationUrl": "https://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

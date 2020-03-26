@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetaPocoWebApi.Model;
 using PetaPocoWebApi.Service;
+using PetaPocoWebApi.validation;
 
 namespace PetaPocoWebApi.Controllers
 {
@@ -13,10 +14,12 @@ namespace PetaPocoWebApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        
         private IRepository _repository = null;
         public UserController()
         {
             _repository = new Repository();
+         
         }
 
         // GET: api/User
@@ -59,14 +62,32 @@ namespace PetaPocoWebApi.Controllers
         [HttpPut("update/{id}")]
         public IActionResult Put(int id, [FromBody] User user)
         {
-            string message = "修改失败";
-            if (_repository.QueryById<User>(id) != null)
+            try
             {
-                _repository.Update<User>(user);
-                message = "修改成功";
+                string message = "失败";
+                UserValidation _userValidation = new UserValidation();
+                var result = _userValidation.Validate(user);
+               
+                if (result.IsValid)
+                {
+                    if (_repository.QueryById<User>(id) != null)
+                    {
+                        _repository.Update<User>(user);
+                        message = "修改成功";
+                    }
+                }
+                else
+                {
+                    message = result.ToString();
+                }
+                
+                return Content(message);
             }
+            catch (Exception ex)
+            {
 
-            return Content(message);
+                throw ex;
+            }
         }
 
         //删除

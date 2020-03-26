@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace PetaPocoWebApi.Model
 {
     [TableName("User")]
-    [PrimaryKey("Id", AutoIncrement = true)]
+    [PrimaryKey("user_id", AutoIncrement = true)]
     public class User
     {
         [Column("user_id")]
