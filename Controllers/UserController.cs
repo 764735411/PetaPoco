@@ -12,7 +12,7 @@ using PetaPocoWebApi.validation;
 namespace PetaPocoWebApi.Controllers
 {
     //启用跨域
-    [EnableCors("AllowSameDomain")]
+   
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase

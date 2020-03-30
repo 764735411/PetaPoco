@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PetaPocoWebApi.Model;
+using Swashbuckle.AspNetCore;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace PetaPocoWebApi
 {
@@ -27,11 +29,12 @@ namespace PetaPocoWebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            var urls = Configuration["AppConfig:Cores"].Split(',');
-            //¿çÓòÅäÖÃ
+            //¿çÓòÅäÖÃ ÉèÖÃÇëÇóÀ´Ô´   
             services.AddCors(options =>
-            options.AddPolicy("AllowSameDomain",
-            builder => builder.WithOrigins(urls).AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
+            options.AddPolicy("Domain",
+            builder => builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()));
+            //builder => builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +46,7 @@ namespace PetaPocoWebApi
             }
 
             app.UseHttpsRedirection();
-            app.UseCors();
+            app.UseCors("Domain");
             app.UseRouting();
 
             app.UseAuthorization();

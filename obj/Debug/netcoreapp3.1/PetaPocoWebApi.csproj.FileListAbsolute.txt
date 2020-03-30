@@ -151,3 +151,13 @@ H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.dll
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.pdb
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.genruntimeconfig.cache
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.csprojAssemblyReference.cache
+H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+H:\bin\netcoreapp3.1\appsettings.Development.json
+H:\bin\netcoreapp3.1\appsettings.json
+H:\bin\netcoreapp3.1\Properties\launchSettings.json
+H:\bin\netcoreapp3.1\PetaPocoWebApi.exe
+H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.MvcApplicationPartsAssemblyInfo.cs
+H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.MvcApplicationPartsAssemblyInfo.cache
