@@ -19,7 +19,7 @@ namespace PetaPocoWebApi.Service
         public void Add<T>(T t);
 
         //修改
-        public int Update<T>(T t);
+        public int Update<T>(T t, int id);
 
 
 

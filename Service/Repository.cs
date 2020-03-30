@@ -45,9 +45,9 @@ namespace PetaPocoWebApi.Service
             return t;
         }
 
-        public int Update<T>(T t)
+        public int Update<T>(T t,int id)
         {
-           int updateResult = db.Update(t);
+           int updateResult = db.Update(t,id);
             return updateResult;
         }
     }

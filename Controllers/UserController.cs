@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetaPocoWebApi.Model;
@@ -10,6 +11,8 @@ using PetaPocoWebApi.validation;
 
 namespace PetaPocoWebApi.Controllers
 {
+    //启用跨域
+    [EnableCors("AllowSameDomain")]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -72,8 +75,12 @@ namespace PetaPocoWebApi.Controllers
                 {
                     if (_repository.QueryById<User>(id) != null)
                     {
-                        _repository.Update<User>(user);
-                        message = "修改成功";
+                        int a = _repository.Update<User>(user, id);
+                        if (a == 1)
+                        {
+                            message = "修改成功";
+                        }
+                        
                     }
                 }
                 else

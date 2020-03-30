@@ -141,8 +141,6 @@ H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcore
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 H:\code\Patecoco\PetaPocoWebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.MvcApplicationPartsAssemblyInfo.cs
-H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.MvcApplicationPartsAssemblyInfo.cache
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.AssemblyInfoInputs.cache
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.AssemblyInfo.cs
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.RazorTargetAssemblyInfo.cache
@@ -152,3 +150,4 @@ H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\staticwebassets\PetaPoco
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.dll
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.pdb
 H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.genruntimeconfig.cache
+H:\code\Patecoco\PetaPocoWebApi\obj\Debug\netcoreapp3.1\PetaPocoWebApi.csprojAssemblyReference.cache
