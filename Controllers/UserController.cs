@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PetaPoco;
 using PetaPocoWebApi.Model;
 using PetaPocoWebApi.Service;
 using PetaPocoWebApi.validation;
@@ -32,6 +33,7 @@ namespace PetaPocoWebApi.Controllers
         {
 
             List<User> userList = _repository.QueryAll<User>();
+            //Page<User> p = _repository.SelectBypage<User>(1, 2);
             //string StudentJson = JsonConvert.SerializeObject(studentList);
             return new JsonResult(userList);
         }
@@ -43,6 +45,15 @@ namespace PetaPocoWebApi.Controllers
             User user = _repository.QueryById<User>(id);
             //string user = JsonConvert.SerializeObject(student);
             return new JsonResult(user);
+        }
+
+        [HttpGet("item/page={page}&pageSize={pageSize}")]
+        public IActionResult PageSelect(int page,int pageSize)
+        {
+
+            Page<User> p = _repository.SelectBypage<User>(page, pageSize);
+            //string StudentJson = JsonConvert.SerializeObject(studentList);
+            return new JsonResult(p);
         }
 
         //添加

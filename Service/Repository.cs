@@ -36,6 +36,7 @@ namespace PetaPocoWebApi.Service
         public List<T> QueryAll<T>()
         {
             List<T> list = db.Fetch<T>();
+           
             return list;
         }
 
@@ -49,6 +50,12 @@ namespace PetaPocoWebApi.Service
         {
            int updateResult = db.Update(t,id);
             return updateResult;
+        }
+
+        public Page<T> SelectBypage<T>(int page,int pageSize)
+        {
+           Page<T> p = db.Page<T>(page, pageSize);
+            return p;
         }
     }
 }

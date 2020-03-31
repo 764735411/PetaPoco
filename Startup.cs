@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using PetaPocoWebApi.Model;
 using Swashbuckle.AspNetCore;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace PetaPocoWebApi
 {
@@ -34,7 +34,14 @@ namespace PetaPocoWebApi
             options.AddPolicy("Domain",
             builder => builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()));
             //builder => builder.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin().AllowCredentials()));
+            //注册Swagger生成器，定义一个和多个Swagger 文档
+   /*         services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+
+            });*/
            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +62,14 @@ namespace PetaPocoWebApi
             {
                 endpoints.MapControllers();
             });
+
+            //启用中间件服务生成Swagger作为JSON终结点 
+            //app.UseSwagger();
+            //启用中间件服务对swagger-ui，指定Swagger JSON终结点
+            /*app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });*/
         }
     }
 }

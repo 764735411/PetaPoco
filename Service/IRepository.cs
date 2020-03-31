@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetaPoco;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ namespace PetaPocoWebApi.Service
         //修改
         public int Update<T>(T t, int id);
 
-
+        //分页
+        public Page<T> SelectBypage<T>(int page, int pageSize);
 
     }
 }
