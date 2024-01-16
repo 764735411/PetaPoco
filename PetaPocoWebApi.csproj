@@ -28,7 +28,7 @@
     <PackageReference Include="PetaPoco.Compiled" Version="6.0.441" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.2.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.2.1" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="http://json.schemastore.org/azure-iot-edge-deployment-2.0" appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
